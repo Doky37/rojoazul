@@ -18,6 +18,16 @@ ctx.shadowBlur = 5;
 
 ctx.beginPath();
 
-ctx.arc(500,350,100,0,2*Math.PI);
+ctx.arc(500,450,100,0,2*Math.PI);
 ctx.stroke();
 
+const gradient = ctx.createLinearGradient(20, 0, 220, 0);
+
+// Add three color stops
+gradient.addColorStop(0, "purple");
+gradient.addColorStop(0.5, "cyan");
+gradient.addColorStop(1, "red");
+
+// Set the fill style and draw a rectangle
+ctx.fillStyle = gradient;
+ctx.fillRect(20, 20, 200, 100);
